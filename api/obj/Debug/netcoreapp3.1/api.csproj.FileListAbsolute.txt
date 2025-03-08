@@ -1,0 +1,140 @@
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.csproj.AssemblyReference.cache
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.AssemblyInfoInputs.cache
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.AssemblyInfo.cs
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.csproj.CoreCompileInputs.cache
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\api.exe
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\api.deps.json
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\api.runtimeconfig.json
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\api.runtimeconfig.dev.json
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\api.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\api.pdb
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Projects\.Net\jwt-authentication\api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\staticwebassets\api.StaticWebAssets.Manifest.cache
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.RazorTargetAssemblyInfo.cache
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.csproj.CopyComplete
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.dll
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.pdb
+D:\Projects\.Net\jwt-authentication\api\obj\Debug\netcoreapp3.1\api.genruntimeconfig.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.csproj.AssemblyReference.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.AssemblyInfoInputs.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.AssemblyInfo.cs
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.csproj.CoreCompileInputs.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.MvcApplicationPartsAssemblyInfo.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\api.exe
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\api.deps.json
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\api.runtimeconfig.json
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\api.runtimeconfig.dev.json
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\api.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\api.pdb
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\staticwebassets\api.StaticWebAssets.Manifest.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\staticwebassets\api.StaticWebAssets.Pack.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.api.props
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.api.props
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.api.props
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.RazorTargetAssemblyInfo.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.csproj.CopyComplete
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.dll
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.pdb
+C:\Amer\Coding projects\jwt-authentication-main\api\obj\Debug\netcoreapp3.1\api.genruntimeconfig.cache
+C:\Amer\Coding projects\jwt-authentication-main\api\bin\Debug\netcoreapp3.1\UAParser.dll

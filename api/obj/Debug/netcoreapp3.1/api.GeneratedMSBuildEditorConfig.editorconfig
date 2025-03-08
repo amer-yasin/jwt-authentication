@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = api
+build_property.ProjectDir = C:\Amer\Coding projects\jwt-authentication-main\api\
