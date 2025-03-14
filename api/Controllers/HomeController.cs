@@ -12,7 +12,7 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Giriş Başarılı");
+            return Ok("");
         }
     }
 }

@@ -34,7 +34,17 @@ const loginWithRefreshToken = (token) => {
 };
 
 const logout = () => {
-  localStorage.removeItem("user");
+  const user = JSON.parse(localStorage.getItem("user"));
+  const token = user?.accessToken;
+
+  return axios.post(baseURL + API_URL + "/logout", {}, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }).then((response) => {
+    localStorage.removeItem("user");
+    return response;
+  });
 };
 
 const getCurrentUser = () => {

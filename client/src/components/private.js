@@ -7,13 +7,14 @@ import Alert from 'react-bootstrap/Alert';
 const Home = () => {
   const [privatePosts, setPrivatePosts] = useState([]);
   const user = AuthService.getCurrentUser();
-  const logOut = () => {
-    AuthService.logout();
-  };
-
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!user) {
+      navigate("/");
+      return;
+    }
+
     PostService.getAllPrivatePosts().then(
       (response) => {
         setPrivatePosts(response.data);
@@ -44,6 +45,11 @@ const Home = () => {
     );
   }, [user, navigate]);
 
+  const logOut = () => {
+    AuthService.logout();
+    navigate("/");
+  };
+
   return (
     <div>
       <Alert severity="success">
@@ -53,7 +59,6 @@ const Home = () => {
 
       <div className="d-grid gap-2 mt-3">
         <Link to="/" onClick={logOut}>
-
           <button type="submit" className="btn btn-primary">
             Logout
           </button>

@@ -25,6 +25,16 @@ namespace api.Repositories
 
                 _context.Add(user);
 
+                user = new User { Email = "ajay@gmail.com", Password = _passwordHasher.HashPassword("123456") , Role = "User" };
+
+                _context.Add(user);
+
+                user = new User { Email = "supe@gmail.com", Password = _passwordHasher.HashPassword("123456") , Role = "Super" };
+
+                _context.Add(user);
+
+
+
                 _context.SaveChanges();
             } 
         }
