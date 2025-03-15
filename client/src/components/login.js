@@ -16,7 +16,7 @@ const Login = () => {
         try {
             await AuthService.login(email, password).then(
                 () => {
-                    navigate("/private");
+                    navigate("/todoList");
                     window.location.reload();
                 },
                 (error) => {

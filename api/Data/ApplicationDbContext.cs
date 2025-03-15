@@ -14,5 +14,6 @@ namespace api.Data
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<User> User { get; set; }
+        public DbSet<TodoItem> TodoItems { get; set; }
     }
 }

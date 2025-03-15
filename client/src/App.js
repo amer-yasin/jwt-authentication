@@ -3,6 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/login";
 import Private from "./components/private";
+import TodoList from "./components/TodoList";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/private" element={<Private />} />
           <Route path="/" element={<Login />} />
+          <Route path="/todolist" element={<TodoList />} />
         </Routes>
       </div>
     </div>
