@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://localhost:5001";
+const baseURL = "http://localhost:5000"; // Changed from https to http
 
 const API_URL = "/api/auth";
 
@@ -13,7 +13,7 @@ const login = (email, password) => {
     .then((response) => {
       if (response.data.accessToken) {
         localStorage.setItem("user", JSON.stringify(response.data));
-        console.log(response.data)
+        console.log(response.data);
       }
       return response;
     });
@@ -27,7 +27,7 @@ const loginWithRefreshToken = (token) => {
     .then((response) => {
       if (response.data.accessToken) {
         localStorage.setItem("user", JSON.stringify(response.data));
-        console.log(response.data)
+        console.log(response.data);
       }
       return response;
     });
@@ -41,9 +41,6 @@ const logout = () => {
     headers: {
       Authorization: `Bearer ${token}`
     }
-  }).then((response) => {
-    localStorage.removeItem("user");
-    return response;
   });
 };
 

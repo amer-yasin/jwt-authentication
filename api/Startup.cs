@@ -25,14 +25,25 @@ namespace api
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("mssql")));
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ILoggingService, LoggingService>(); // Add this line to register ILoggingService
-            
+            services.AddScoped<ILoggingService, LoggingService>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option =>
             {
                 option.TokenValidationParameters = new TokenValidationParameters
@@ -47,8 +58,6 @@ namespace api
                     ClockSkew = TimeSpan.Zero
                 };
             });
-            services.AddCors();
-
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -61,19 +70,15 @@ namespace api
                 scope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.Migrate();
             }
 
-            app.UseHttpsRedirection();
+            // Comment out or remove the HTTPS redirection middleware
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseCors("AllowAllOrigins");
+
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseCors(options => options
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowAnyOrigin()
-
-            );
 
             app.UseEndpoints(endpoints =>
             {
