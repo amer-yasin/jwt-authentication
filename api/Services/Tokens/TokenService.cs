@@ -1,12 +1,12 @@
 ﻿using api.Models;
+using api.Models.Entities;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using System;
-using Microsoft.Extensions.Configuration;
-using System.Security.Cryptography;
-using api.Models.Entities;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
+using Microsoft.Extensions.Configuration;
+using System;
 
 namespace api.Services
 {
@@ -17,6 +17,7 @@ namespace api.Services
         {
             _configuration = configuration;
         }
+
         public Token CreateToken(User user)
         {
             var claims = new[]
@@ -33,7 +34,7 @@ namespace api.Services
 
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            tokenInstance.Expiration = DateTime.Now.AddMinutes(1);
+            tokenInstance.Expiration = DateTime.Now.AddDays(7);
             JwtSecurityToken securityToken = new JwtSecurityToken(
                 issuer: _configuration["Token:Issuer"],
                 audience: _configuration["Token:Audience"],
@@ -50,6 +51,7 @@ namespace api.Services
             tokenInstance.RefreshToken = CreateRefreshToken();
             return tokenInstance;
         }
+
         public string CreateRefreshToken()
         {
             byte[] number = new byte[32];
@@ -58,6 +60,12 @@ namespace api.Services
                 random.GetBytes(number);
                 return Convert.ToBase64String(number);
             }
+        }
+
+        public Token ExpireToken(Token token)
+        {
+            token.Expiration = DateTime.Now.AddMinutes(-1); // Set expiration to a past date
+            return token;
         }
     }
 }

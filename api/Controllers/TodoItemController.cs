@@ -3,11 +3,13 @@ using api.Models.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using api.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize] // Ensure all actions require authentication
     public class TodoItemController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

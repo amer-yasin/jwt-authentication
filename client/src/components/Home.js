@@ -26,7 +26,7 @@ const Home = () => {
           if (user != null) {
             await AuthService.loginWithRefreshToken(user.refreshToken).then(
               () => {
-                navigate("/private");
+                navigate("/home");
                 window.location.reload();
               },
               () => {
@@ -63,6 +63,15 @@ const Home = () => {
             Logout
           </button>
         </Link>
+      </div>
+
+      <div className="todo-list-brief">
+        <h2>About the Todo List</h2>
+        <p>
+          The Todo List application allows you to manage your tasks efficiently. 
+          You can add new tasks, update existing ones, and delete tasks that are no longer needed. 
+          Each task can be marked as completed or pending. Stay organized and keep track of your daily activities with ease.
+        </p>
       </div>
     </div>
   );

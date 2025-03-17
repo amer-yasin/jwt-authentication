@@ -7,5 +7,6 @@ namespace api.Services
     {
         Token CreateToken(User user);
         string CreateRefreshToken();
+        Token ExpireToken(Token token);
     }
 }

@@ -23,6 +23,7 @@ namespace api
         }
 
         public IConfiguration Configuration { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
@@ -59,6 +60,7 @@ namespace api
                 };
             });
         }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -72,6 +74,9 @@ namespace api
 
             // Comment out or remove the HTTPS redirection middleware
             // app.UseHttpsRedirection();
+
+            app.UseMiddleware<LoggingMiddleware>();
+            app.UseMiddleware<BlacklistTokenMiddleware>();
 
             app.UseRouting();
 

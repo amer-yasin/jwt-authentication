@@ -37,6 +37,8 @@ const logout = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = user?.accessToken;
 
+  localStorage.removeItem("user");
+  
   return axios.post(baseURL + API_URL + "/logout", {}, {
     headers: {
       Authorization: `Bearer ${token}`

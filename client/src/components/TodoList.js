@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import TodoService from '../services/todo.service';
 import './TodoList.css';
+import AuthService from "../services/auth.service";
+import { useNavigate } from "react-router-dom";
 
 const TodoList = () => {
     const [todoItems, setTodoItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [newItemTitle, setNewItemTitle] = useState('');
+    const user = AuthService.getCurrentUser();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if (!user) {
+            navigate("/");
+            return;
+          }
         const fetchTodoItems = async () => {
             try {
                 const response = await TodoService.getTodoItems(); // Replace '1' with the current user's ID
@@ -44,6 +52,9 @@ const TodoList = () => {
     };
 
     const handleDelete = async (id) => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+        if (!confirmDelete) return;
+
         try {
             await TodoService.deleteTodoItem(id);
             setTodoItems(todoItems.filter(item => item.id !== id));

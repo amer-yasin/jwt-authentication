@@ -9,6 +9,6 @@ namespace api.Models.Entities
         public string Password { get; set; }
         public string RefreshToken { get; set; }
         public DateTime? RefreshTokenEndDate { get; set; }
-        public string Role { get; set; } // Add this line   
+        public string Role { get; set; }
     }
 }
