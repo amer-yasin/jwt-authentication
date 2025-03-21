@@ -53,7 +53,13 @@ namespace api.Controllers
             user.RefreshTokenEndDate = token.Expiration.AddDays(7);
             await _userRepository.CommitAsync();
 
-            return Ok(token);
+            return Ok(new
+            {
+                accessToken = token.AccessToken,
+                refreshToken = token.RefreshToken,
+                username = user.Email, // Or user.Username if available
+                role = user.Role
+            });
         }
 
         [HttpPost("logout")]

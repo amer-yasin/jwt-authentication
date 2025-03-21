@@ -52,18 +52,16 @@ const Home = () => {
 
   return (
     <div>
+      {user && (
+        <h1>Welcome, {user.username || user.email}!</h1>
+      )}
+      
       <Alert severity="success">
         <Alert.Heading>Success</Alert.Heading>
         {privatePosts}
       </Alert>
 
-      <div className="d-grid gap-2 mt-3">
-        <Link to="/" onClick={logOut}>
-          <button type="submit" className="btn btn-primary">
-            Logout
-          </button>
-        </Link>
-      </div>
+
 
       <div className="todo-list-brief">
         <h2>About the Todo List</h2>
@@ -71,7 +69,19 @@ const Home = () => {
           The Todo List application allows you to manage your tasks efficiently. 
           You can add new tasks, update existing ones, and delete tasks that are no longer needed. 
           Each task can be marked as completed or pending. Stay organized and keep track of your daily activities with ease.
+
         </p>
+        <p>
+          <Link to="/todolist">Go to Todo List</Link>
+        </p>
+      </div>
+
+      <div className="d-grid gap-2 mt-3">
+        <Link to="/" onClick={logOut}>
+          <button type="submit" className="btn btn-primary">
+            Logout
+          </button>
+        </Link>
       </div>
     </div>
   );

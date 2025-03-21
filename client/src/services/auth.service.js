@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000"; // Changed from https to http
+const baseURL = "http://monday.lcl:5000"; // Changed from https to http
 
 const API_URL = "/api/auth";
 

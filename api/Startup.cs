@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
 using api.Repositories;
+using System.Security.Claims;
 
 namespace api
 {
@@ -56,7 +57,8 @@ namespace api
                     ValidIssuer = Configuration["Token:Issuer"],
                     ValidAudience = Configuration["Token:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:SecurityKey"])),
-                    ClockSkew = TimeSpan.Zero
+                    ClockSkew = TimeSpan.Zero,
+                    NameClaimType = ClaimTypes.Name // Ensure the Name claim is mapped correctly
                 };
             });
         }
@@ -75,8 +77,7 @@ namespace api
             // Comment out or remove the HTTPS redirection middleware
             // app.UseHttpsRedirection();
 
-            app.UseMiddleware<LoggingMiddleware>();
-            app.UseMiddleware<BlacklistTokenMiddleware>();
+    
 
             app.UseRouting();
 
@@ -84,6 +85,9 @@ namespace api
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseMiddleware<LoggingMiddleware>();
+            app.UseMiddleware<BlacklistTokenMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
