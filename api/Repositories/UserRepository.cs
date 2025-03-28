@@ -16,27 +16,36 @@ namespace api.Repositories
             _context = context;
             _passwordHasher = passwordHasher;
 
-            // Auto migrate and add example user
+            // Auto migrate and add example users if they do not exist
             _context.Database.Migrate();
 
-            if (!_context.User.Any())
+            var users = new[]
             {
-                var user = new User { Email = "admin@gmail.com", Password = _passwordHasher.HashPassword("123456") , Role = "Admin" };
+            new { Email = "admin@gmail.com", Password = "123456", Role = "Admin" },
+            new { Email = "admin2@gmail.com", Password = "123456", Role = "Admin" },
+            new { Email = "admin3@gmail.com", Password = "123456", Role = "Admin" },
+            new { Email = "ajay@gmail.com", Password = "123456", Role = "User" },
+            new { Email = "user2@gmail.com", Password = "123456", Role = "User" },
+            new { Email = "user3@gmail.com", Password = "123456", Role = "User" },
+            new { Email = "super@gmail.com", Password = "123456", Role = "Super" }
+            };
+
+            foreach (var userInfo in users)
+            {
+            if (!_context.User.Any(u => u.Email == userInfo.Email))
+            {
+                var user = new User
+                {
+                Email = userInfo.Email,
+                Password = _passwordHasher.HashPassword(userInfo.Password),
+                Role = userInfo.Role
+                };
 
                 _context.Add(user);
+            }
+            }
 
-                user = new User { Email = "ajay@gmail.com", Password = _passwordHasher.HashPassword("123456") , Role = "User" };
-
-                _context.Add(user);
-
-                user = new User { Email = "supe@gmail.com", Password = _passwordHasher.HashPassword("123456") , Role = "Super" };
-
-                _context.Add(user);
-
-
-
-                _context.SaveChanges();
-            } 
+            _context.SaveChanges();
         }
         public async Task<User> GetByEmailAsync(string email)
         {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using api.Data;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace api.Controllers
 {
@@ -40,7 +41,7 @@ namespace api.Controllers
             return todoItem;
         }
 
-        // GET: api/TodoItem/user/5
+        // GET: api/TodoItem/user/{userId}
         [HttpGet("user/{userId}")]
         public ActionResult<IEnumerable<TodoItem>> GetTodoItemsByUser(int userId)
         {
@@ -48,10 +49,12 @@ namespace api.Controllers
 
             if (todoItems == null || !todoItems.Any())
             {
-                return NotFound();
+                
+                return Ok(new List<TodoItem>()); // Return an empty list instead of NotFound
             }
 
-            return todoItems;
+           
+            return Ok(todoItems);
         }
 
         // POST: api/TodoItem

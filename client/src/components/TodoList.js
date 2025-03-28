@@ -16,10 +16,10 @@ const TodoList = () => {
         if (!user) {
             navigate("/");
             return;
-          }
+        }
         const fetchTodoItems = async () => {
             try {
-                const response = await TodoService.getTodoItems(); // Replace '1' with the current user's ID
+                const response = await TodoService.getTodoItemsByUser(user.id); // Pass the current user's ID
                 setTodoItems(response.data);
             } catch (err) {
                 setError(err);
@@ -29,7 +29,7 @@ const TodoList = () => {
         };
 
         fetchTodoItems();
-    }, []);
+    }, [user, navigate]);
 
     const handleUpdate = async (id, updatedItem) => {
         try {
@@ -41,8 +41,9 @@ const TodoList = () => {
     };
 
     const handleAdd = async () => {
+
         try {
-                        const newItem = { title: newItemTitle, completed: false, userid: 1194 };
+            const newItem = { title: newItemTitle, completed: false, userid: user.id };
             const response = await TodoService.createTodoItem(newItem);
             setTodoItems([...todoItems, response.data]);
             setNewItemTitle('');

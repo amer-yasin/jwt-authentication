@@ -21,7 +21,7 @@ public class LoggingMiddleware
 
             var request = context.Request;
             var response = context.Response;
-            var sourceIp = context.Connection.RemoteIpAddress?.ToString();
+            var sourceIp = context.Connection.RemoteIpAddress?.MapToIPv4().ToString();
             var jwtToken = request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
             // Compute the hash of the JWT token

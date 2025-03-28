@@ -58,7 +58,8 @@ namespace api.Controllers
                 accessToken = token.AccessToken,
                 refreshToken = token.RefreshToken,
                 username = user.Email, // Or user.Username if available
-                role = user.Role
+                role = user.Role,
+                id = user.Id
             });
         }
 
