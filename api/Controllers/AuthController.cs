@@ -8,6 +8,9 @@ using api.Services.Passwords;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace api.Controllers
@@ -161,6 +164,31 @@ namespace api.Controllers
             await _userRepository.CommitAsync();
 
             return Ok(token);
+        }
+
+        [HttpGet("currentUser")]
+        public IActionResult GetCurrentUser()
+        {
+            // Retrieve the claims from the JWT token
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var usernameClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+            var emailClaim = User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value;
+            var roleClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+            // Ensure the user is authenticated and claims are present
+            if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(emailClaim))
+            {
+                return Unauthorized(new { message = "User is not authenticated." });
+            }
+
+            // Return the user details
+            return Ok(new
+            {
+                id = userIdClaim,
+                username = usernameClaim,
+                email = emailClaim,
+                role = roleClaim
+            });
         }
     }
 }
