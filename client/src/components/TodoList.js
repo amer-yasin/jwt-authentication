@@ -17,6 +17,7 @@ const TodoList = () => {
             navigate("/");
             return;
         }
+
         const fetchTodoItems = async () => {
             try {
                 const response = await TodoService.getTodoItemsByUser(user.id); // Pass the current user's ID
@@ -29,7 +30,7 @@ const TodoList = () => {
         };
 
         fetchTodoItems();
-    }, [user, navigate]);
+    }, [user?.id, navigate]); // Use user.id instead of the entire user object
 
     const handleUpdate = async (id, updatedItem) => {
         try {
@@ -41,7 +42,6 @@ const TodoList = () => {
     };
 
     const handleAdd = async () => {
-
         try {
             const newItem = { title: newItemTitle, completed: false, userid: user.id };
             const response = await TodoService.createTodoItem(newItem);

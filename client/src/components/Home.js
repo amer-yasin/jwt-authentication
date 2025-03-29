@@ -52,12 +52,12 @@ const Home = () => {
 
   return (
     <div>
-      {user && (
-        <h1>Welcome, {user.username || user.email}!</h1>
-      )}
+
       
       <Alert severity="success">
-        <Alert.Heading>Success</Alert.Heading>
+        <Alert.Heading>{user && (
+        <h1>Welcome, {user.username || user.email}!</h1>
+      )}</Alert.Heading>
         {privatePosts}
       </Alert>
 

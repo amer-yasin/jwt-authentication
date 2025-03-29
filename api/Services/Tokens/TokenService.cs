@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Linq;
 
 namespace api.Services
 {
@@ -26,12 +27,13 @@ namespace api.Services
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role), // Add role claim
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // Correctly set user ID here
                 // Add other claims as needed
             };
+
             Token tokenInstance = new Token();
 
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]));
-
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             tokenInstance.Expiration = DateTime.Now.AddDays(7);
@@ -42,13 +44,12 @@ namespace api.Services
                 expires: tokenInstance.Expiration,
                 notBefore: DateTime.Now,
                 signingCredentials: signingCredentials
-                );
+            );
 
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-
             tokenInstance.AccessToken = tokenHandler.WriteToken(securityToken);
-
             tokenInstance.RefreshToken = CreateRefreshToken();
+
             return tokenInstance;
         }
 

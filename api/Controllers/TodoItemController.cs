@@ -5,6 +5,7 @@ using System.Linq;
 using api.Data;
 using Microsoft.AspNetCore.Authorization;
 using System;
+using System.Security.Claims;
 
 namespace api.Controllers
 {
@@ -45,15 +46,28 @@ namespace api.Controllers
         [HttpGet("user/{userId}")]
         public ActionResult<IEnumerable<TodoItem>> GetTodoItemsByUser(int userId)
         {
+            // Access the NameIdentifier claim directly
+            var authenticatedUserId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
+            if (authenticatedUserId == null || !int.TryParse(authenticatedUserId, out var userIdFromToken))
+            {
+                return Unauthorized(); // Return 401 Unauthorized if the claim is missing or invalid
+            }
+
+            // Validate that the userId matches the authenticated user's ID
+            if (userId != userIdFromToken)
+            {
+                return Forbid(); // Return 403 Forbidden if the userId does not match
+            }
+
+            // Fetch the Todo items for the authenticated user
             var todoItems = _context.TodoItems.Where(item => item.UserId == userId).ToList();
 
             if (todoItems == null || !todoItems.Any())
             {
-                
                 return Ok(new List<TodoItem>()); // Return an empty list instead of NotFound
             }
 
-           
             return Ok(todoItems);
         }
 
