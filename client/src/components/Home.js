@@ -2,39 +2,29 @@ import React, { useState, useEffect } from "react";
 import PostService from "../services/post.service";
 import AuthService from "../services/auth.service";
 import { useNavigate, Link } from "react-router-dom";
-import Alert from "react-bootstrap/Alert";
+import Alert from 'react-bootstrap/Alert';
 
 const Home = () => {
   const [privatePosts, setPrivatePosts] = useState([]);
-  const [username, setUsername] = useState(null); // State to store the username
+  const user = AuthService.getCurrentUser();
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch the current user details from the backend
-    AuthService.getCurrentUser()
-      .then((data) => {
-        setUsername(data.username); // Set the username from the API response
-      })
-      .catch((error) => {
-        console.error("Failed to fetch user details:", error);
-        AuthService.logout();
-        navigate("/");
-      });
-  }, [navigate]);
-
-  useEffect(() => {
-    if (!username) return;
+    if (!user) {
+      navigate("/");
+      return;
+    }
 
     PostService.getAllPrivatePosts().then(
       (response) => {
         setPrivatePosts(response.data);
       },
       async (error) => {
-        // Handle invalid token
+        // Invalid token
         if (error.response == null) {
-          const currentUser = AuthService.getCurrentUser();
-          if (currentUser) {
-            await AuthService.loginWithRefreshToken(currentUser.refreshToken).then(
+          //refresh token
+          if (user != null) {
+            await AuthService.loginWithRefreshToken(user.refreshToken).then(
               () => {
                 navigate("/home");
                 window.location.reload();
@@ -48,11 +38,12 @@ const Home = () => {
           } else {
             AuthService.logout();
             navigate("/");
+            window.location.reload();
           }
         }
       }
     );
-  }, [username, navigate]);
+  }, [user, navigate]);
 
   const logOut = () => {
     AuthService.logout();
@@ -61,19 +52,23 @@ const Home = () => {
 
   return (
     <div>
+      <h1>Home</h1>
       <Alert severity="success">
-        <Alert.Heading>
-          {username && <h1>Welcome, {username}!</h1>}
-        </Alert.Heading>
+        <Alert.Heading>      {user && (
+        <h1>Welcome, {user.username || user.email}!</h1>
+      )}</Alert.Heading>
         {privatePosts}
       </Alert>
+
+
 
       <div className="todo-list-brief">
         <h2>About the Todo List</h2>
         <p>
-          The Todo List application allows you to manage your tasks efficiently.
-          You can add new tasks, update existing ones, and delete tasks that are no longer needed.
+          The Todo List application allows you to manage your tasks efficiently. 
+          You can add new tasks, update existing ones, and delete tasks that are no longer needed. 
           Each task can be marked as completed or pending. Stay organized and keep track of your daily activities with ease.
+
         </p>
         <p>
           <Link to="/todolist">Go to Todo List</Link>

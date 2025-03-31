@@ -70,11 +70,17 @@ const fetchCurrentUser = () => {
     });
 };
 
+const getCurrentUser = () => {
+  return JSON.parse(localStorage.getItem("user"));
+};
+
+
 const authService = {
   login,
   loginWithRefreshToken,
   logout,
-  getCurrentUser: fetchCurrentUser, // Updated to use the new method
+  fetchCurrentUser,
+  getCurrentUser
 };
 
 export default authService;

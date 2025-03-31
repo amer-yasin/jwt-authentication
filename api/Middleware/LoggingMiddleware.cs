@@ -33,21 +33,26 @@ public class LoggingMiddleware
                 jwtHash = JwtCacheManager.GetTokenHash(jwtToken);
             }
 
-            var dateTime = DateTime.UtcNow;
+            var dateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.Local);
             var date = dateTime.ToString("yyyy-MM-dd");
             var time = dateTime.ToString("HH:mm:ss");
-            var timeZone = TimeZoneInfo.Local.StandardName;
-            var osVersion = Environment.OSVersion.ToString();
+            var timeZone = request.Headers["X-TimeZone"].ToString();
+            if (string.IsNullOrEmpty(timeZone))
+            {
+                timeZone = "Unknown"; // Fallback if the client does not provide the time zone
+            }
+    
             var userAgent = request.Headers["User-Agent"].ToString();
 
             // Parse the user agent string
             var uaParser = Parser.GetDefault();
             ClientInfo clientInfo = uaParser.Parse(userAgent);
+            var osVersion = clientInfo.OS.ToString();
             var browserVersion = clientInfo.UA.ToString();
             var deviceType = clientInfo.Device.ToString();
 
             // Placeholder for geolocation service
-            var geoLocation = GetGeoLocationFromIp(sourceIp);
+            var geoLocation = "Duabi";
 
             var failedAttempts = 0; // You can customize this as needed
             var status = response.StatusCode.ToString();
@@ -63,10 +68,4 @@ public class LoggingMiddleware
         await _next(context);
     }
 
-    private string GetGeoLocationFromIp(string ip)
-    {
-        // Implement geolocation lookup based on IP address
-        // This is a placeholder implementation
-        return "Dubai";
-    }
 }

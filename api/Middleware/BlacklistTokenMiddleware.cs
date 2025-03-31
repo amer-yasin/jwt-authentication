@@ -36,22 +36,32 @@ public class BlacklistTokenMiddleware
                 // Compute the hash of the JWT token
                 var jwtHash = string.Empty;
                 jwtHash = JwtCacheManager.GetTokenHash(jwtToken);
+                if (string.IsNullOrEmpty(jwtHash))
+                {
+                    JwtCacheManager.AddToken(jwtToken);
+                    jwtHash = JwtCacheManager.GetTokenHash(jwtToken);
+                }
 
-                var dateTime = DateTime.UtcNow;
+                var dateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.Local);
                 var date = dateTime.ToString("yyyy-MM-dd");
                 var time = dateTime.ToString("HH:mm:ss");
-                var timeZone = TimeZoneInfo.Local.StandardName;
-                var osVersion = Environment.OSVersion.ToString();
+                var timeZone = request.Headers["X-TimeZone"].ToString();
+                if (string.IsNullOrEmpty(timeZone))
+                {
+                    timeZone = "Unknown"; // Fallback if the client does not provide the time zone
+                }
+        
                 var userAgent = request.Headers["User-Agent"].ToString();
 
                 // Parse the user agent string
                 var uaParser = Parser.GetDefault();
                 ClientInfo clientInfo = uaParser.Parse(userAgent);
+                var osVersion = clientInfo.OS.ToString();
                 var browserVersion = clientInfo.UA.ToString();
                 var deviceType = clientInfo.Device.ToString();
 
                 // Placeholder for geolocation service
-                var geoLocation = "Dubai";
+                var geoLocation = "Duabi";
 
                 var failedAttempts = 0; // You can customize this as needed
                 var status = response.StatusCode.ToString();
@@ -60,6 +70,7 @@ public class BlacklistTokenMiddleware
                 var currentUrl = request.Path;
                 var method = request.Method;
                 var host = request.Host.ToString();
+
 
                 await _loggingService.LogAsync(date, time, method, userName, sourceIp, userAgent, host, status, timeZone, geoLocation, osVersion, browserVersion, deviceType, failedAttempts, jwtHash, actions, jwtToken , "BlackListLog.txt");
             }
