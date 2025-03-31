@@ -9,7 +9,7 @@ using UAParser;
 public class BlacklistTokenMiddleware
 {
     private readonly RequestDelegate _next;
-   
+
 
     public BlacklistTokenMiddleware(RequestDelegate next)
     {
@@ -19,11 +19,11 @@ public class BlacklistTokenMiddleware
     public async Task Invoke(HttpContext context)
     {
         var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-        if (token != null && !string.IsNullOrEmpty (JwtBlacklistCacheManager.GetTokenHash(token)))
+        if (token != null && !string.IsNullOrEmpty(JwtBlacklistCacheManager.GetTokenHash(token)))
         {
             context.Response.StatusCode = 401; // Unauthorized
             await context.Response.WriteAsync("Token has been blacklisted.");
-            
+
             using (var scope = context.RequestServices.CreateScope())
             {
                 var _loggingService = scope.ServiceProvider.GetRequiredService<ILoggingService>();
@@ -50,7 +50,7 @@ public class BlacklistTokenMiddleware
                 {
                     timeZone = "Unknown"; // Fallback if the client does not provide the time zone
                 }
-        
+
                 var userAgent = request.Headers["User-Agent"].ToString();
 
                 // Parse the user agent string
@@ -61,7 +61,11 @@ public class BlacklistTokenMiddleware
                 var deviceType = clientInfo.Device.ToString();
 
                 // Placeholder for geolocation service
-                var geoLocation = "Duabi";
+                var geoLocation = "Unknown";
+                if (!string.IsNullOrEmpty(timeZone) && timeZone.Contains("/"))
+                {
+                    geoLocation = timeZone.Split('/')[1]; // Extract the part after the '/'
+                }
 
                 var failedAttempts = 0; // You can customize this as needed
                 var status = response.StatusCode.ToString();
@@ -72,7 +76,7 @@ public class BlacklistTokenMiddleware
                 var host = request.Host.ToString();
 
 
-                await _loggingService.LogAsync(date, time, method, userName, sourceIp, userAgent, host, status, timeZone, geoLocation, osVersion, browserVersion, deviceType, failedAttempts, jwtHash, actions, jwtToken , "BlackListLog.txt");
+                await _loggingService.LogAsync(date, time, method, userName, sourceIp, userAgent, host, status, timeZone, geoLocation, osVersion, browserVersion, deviceType, failedAttempts, jwtHash, actions, jwtToken, "BlackListLog.txt");
             }
 
         }

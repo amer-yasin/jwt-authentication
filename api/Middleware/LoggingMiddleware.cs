@@ -52,7 +52,11 @@ public class LoggingMiddleware
             var deviceType = clientInfo.Device.ToString();
 
             // Placeholder for geolocation service
-            var geoLocation = "Duabi";
+            var geoLocation = "Unknown";
+            if (!string.IsNullOrEmpty(timeZone) && timeZone.Contains("/"))
+            {
+                geoLocation = timeZone.Split('/')[1]; // Extract the part after the '/'
+            }
 
             var failedAttempts = 0; // You can customize this as needed
             var status = response.StatusCode.ToString();
