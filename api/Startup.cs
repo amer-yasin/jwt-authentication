@@ -45,6 +45,7 @@ namespace api
             services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILoggingService, LoggingService>();
+            services.AddScoped<IEmailService, EmailService>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
