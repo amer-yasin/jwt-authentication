@@ -157,7 +157,7 @@ namespace api.Controllers
                     <p>If this was you, no further action is required. You can safely ignore this message.</p>
                     <p>However, if you do not recognize this activity, we strongly recommend that you take immediate action to protect your account:</p>
                     <ul>
-                        <li>🔒 <a href='https://localhost:5001/api/auth/revokelogin?tokenhash={tokenhash}'>Revoke Access</a></li>
+                        <li>🔒 <a href='http://localhost:5001/api/auth/revokelogin?tokenhash={tokenhash}'>Revoke Access</a></li>
                         <li>🔐 <a href='http://monday.lcl:3000'>Secure Your Account</a></li>
                     </ul>
                     <p>For your safety, never share your login credentials or token links with anyone.</p>
