@@ -6,10 +6,31 @@ namespace api.Services
 {
     public class LoggingService : ILoggingService
     {
-        public async Task LogAsync(string date, string time, string method, string userName, string sourceIp, string userAgent, string host, string status, string timeZone, string geoLocation, string osVersion, string browserVersion, string deviceType, int failedAttempts, string jwtHash, string actions, string jwtToken , string logFileName )
+        public async Task LogAsync(
+            string date, 
+            string time, 
+            string method, 
+            string userName, 
+            string sourceIp, 
+            string userAgent, 
+            string host, 
+            string status, 
+            string timeZone, 
+            string geoLocation, 
+            string osVersion, 
+            string browserVersion, 
+            string deviceType, 
+            int failedAttempts, 
+            string jwtHash, 
+            string actions, 
+            string jwtToken, 
+            string screenResolution, // Add screen resolution parameter
+            string browserLanguage,  // Add browser language parameter
+            string logFileName       // Keep log file name as the last parameter
+        )
         {
-            string logMessage = $"\"{date}\" | \"{time}\" | \"{method}\" | \"{userName}\" | \"{sourceIp}\" | \"{userAgent}\" | \"{host}\" | \"{status}\" | \"{timeZone}\" | \"{geoLocation}\" | \"{osVersion}\" | \"{browserVersion}\" | \"{deviceType}\" | \"{failedAttempts}\" | \"{jwtHash}\" | \"{actions}\" | \"{jwtToken}\"";
-            string logFilePath = Path.Combine("log", logFileName );
+            string logMessage = $"\"{date}\" | \"{time}\" | \"{method}\" | \"{userName}\" | \"{sourceIp}\" | \"{userAgent}\" | \"{host}\" | \"{status}\" | \"{timeZone}\" | \"{geoLocation}\" | \"{osVersion}\" | \"{browserVersion}\" | \"{deviceType}\" | \"{failedAttempts}\" | \"{jwtHash}\" | \"{actions}\" | \"{jwtToken}\" | \"{screenResolution}\" | \"{browserLanguage}\"";
+            string logFilePath = Path.Combine("log", logFileName);
 
             try
             {

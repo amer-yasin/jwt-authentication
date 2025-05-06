@@ -64,7 +64,19 @@ public class BlacklistTokenMiddleware
                 var geoLocation = "Unknown";
                 if (!string.IsNullOrEmpty(timeZone) && timeZone.Contains("/"))
                 {
-                    geoLocation = timeZone.Split('/')[1]; // Extract the part after the '/'
+                    geoLocation = timeZone.Split('/')[1]; // Extract the part after the '/' 
+                }
+
+                var screenResolution = request.Headers["X-Screen-Resolution"].ToString();
+                if (string.IsNullOrEmpty(screenResolution))
+                {
+                    screenResolution = "Unknown"; // Fallback if the client does not provide the screen resolution
+                }
+
+                var browserLanguage = request.Headers["X-Browser-Language"].ToString();
+                if (string.IsNullOrEmpty(browserLanguage))
+                {
+                    browserLanguage = "Unknown"; // Fallback if the client does not provide the browser language
                 }
 
                 var failedAttempts = 0; // You can customize this as needed
@@ -76,7 +88,28 @@ public class BlacklistTokenMiddleware
                 var host = request.Host.ToString();
 
 
-                await _loggingService.LogAsync(date, time, method, userName, sourceIp, userAgent, host, status, timeZone, geoLocation, osVersion, browserVersion, deviceType, failedAttempts, jwtHash, actions, jwtToken, "BlackListLog.txt");
+                await _loggingService.LogAsync(
+                    date, 
+                    time, 
+                    method, 
+                    userName, 
+                    sourceIp, 
+                    userAgent, 
+                    host, 
+                    status, 
+                    timeZone, 
+                    geoLocation, 
+                    osVersion, 
+                    browserVersion, 
+                    deviceType, 
+                    failedAttempts, 
+                    jwtHash, 
+                    actions, 
+                    jwtToken, 
+                    screenResolution, // Add screen resolution to the log
+                    browserLanguage,  // Add browser language to the log
+                    "BlackListLog.txt" // Keep this as the last parameter
+                );
             }
 
         }
