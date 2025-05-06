@@ -146,7 +146,7 @@ namespace api.Controllers
 
         [HttpGet("sendalert")]
         [AllowAnonymous]
-        public async Task<IActionResult> SendAlert(string tokenhash)
+        public async Task<IActionResult> SendAlert(string tokenhash,string email)
         {
             string subject = "Security Alert: New Device Login Detected";
             string body = $@"
@@ -168,15 +168,15 @@ namespace api.Controllers
                 </html>
             ";
 
-            string recipientEmail = "user@email.com";
+            /*string recipientEmail = "user@email.com";
             var emailClaim = User.Claims.FirstOrDefault(c => c.Type == JwtRegisteredClaimNames.Sub)?.Value;
             if (!string.IsNullOrEmpty(emailClaim))
             {
                 recipientEmail = emailClaim;
-            }
+            }*/
 
             // Assuming you have an email service to send emails
-            await _emailService.SendEmailAsync(recipientEmail, subject, body);
+            await _emailService.SendEmailAsync(email, subject, body);
 
             return Ok(new { message = "Security email shared" });
         }
