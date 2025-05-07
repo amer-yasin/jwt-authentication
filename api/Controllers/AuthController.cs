@@ -26,12 +26,15 @@ namespace api.Controllers
         private readonly IEmailService _emailService; // Assuming you have an email service
 
 
-        public AuthController(ITokenService tokenService, IPasswordHasher passwordHasher, IUserRepository userRepository)
+        public AuthController(ITokenService tokenService, IPasswordHasher passwordHasher, IUserRepository userRepository, IEmailService emailService)
         {
+            _emailService = emailService;
             _userRepository = userRepository;
             _tokenService = tokenService;
             _passwordHasher = passwordHasher;
+            _emailService = emailService;
         }
+
 
         [HttpPost("login")]
         [AllowAnonymous]
